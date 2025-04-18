@@ -14,6 +14,7 @@ public:
     int kapasitas;
     void tampilkanInfo();
     void cekKuota();
+    void login();
     //string deskripsi;
     //string pembicara;
     //string namaPenyelenggara;

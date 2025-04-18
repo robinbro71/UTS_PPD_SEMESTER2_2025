@@ -3,6 +3,7 @@
 using namespace std;
 class App :
     public Event
-{
+{public:
+    void test();
 };
 

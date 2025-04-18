@@ -2,12 +2,57 @@
 //
 
 #include <iostream>
+#include <stdio.h>
 #include "Event.h"
+#include "App.h"
+#include "Konferensi.h"
+#include "Workshop.h"
+#include "Peserta.h"
+#include "Registrasi.h"
+#include "Seminar.h"
+#include "Sertifikat.h"
 using namespace std;
+
+void invalid() {
+    printf("Invalid input. Please try again.\n");
+    getchar();
+    getchar();
+}
+
+void loginPage(Event& event, Peserta& peserta) {
+    system("cls");
+
+    int select;
+    printf("plese select:\n");
+    printf("1. Login:\n");
+    printf("2. Daftar:\n");
+    printf("plese select: ");
+    cin >> select;
+
+    if (select == 1) {
+        event.login();
+    }
+    if (select == 2) {
+        peserta.tambahPeserta();
+    }
+    else {
+        invalid();
+        loginPage(event, peserta);
+    }
+}
 
 int main()
 {
-    cout << "Hello World!\n";
+    int select;
+    Event event;
+    Peserta peserta;
+    App app;
+
+    loginPage(event, peserta);
+    
+
+    
+   
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
